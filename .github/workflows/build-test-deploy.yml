@@ -1,16 +1,12 @@
 name: build-test-deploy
 on: push
 jobs:
-  hello-world:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: checkout
-        uses: actions/checkout@v5
-      - name: setup node
-        uses: actions/setup-node@v4
-        with: 
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v4
+        with:
           node-version: '20.x'
-          
-      - run: |
-          node --version
-          echo "Hello World"
+      - run: echo 'Hello World'
+      
